@@ -17,15 +17,16 @@ public class SpereController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        _anim.SetBool("Trigger_tap1", true);
         if (EventController.EventPlay() == "Sphere" || EventController.EventPlay() == "NPC" && _isCutin == false)
         {
             //_slideIn.PictureSlideIn ();
             //bool _isPlaying = !_anim.GetCurrentAnimatorStateInfo(0).IsName("Trigger_tap1");
             //Debug.Log(_isPlaying);
-            //_anim.SetBool("Trigger_tap1", false);
+            _anim.SetBool("Trigger_tap1", true);
             //_anim.SetTrigger("Trigger_tap1");
             _isCutin = true;
         };
-	}
+        Debug.Log(_anim.GetCurrentAnimatorStateInfo(0).IsName("stillPizza1_mov1"));
+
+    }
 }
