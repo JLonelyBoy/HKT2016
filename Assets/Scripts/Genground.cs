@@ -4,8 +4,8 @@ using UnityEditor;
 
 public class Genground : MonoBehaviour {
 
-    public int vsize;
-    public int hsize;
+    public int vsize = 8;
+    public int hsize = 8;
     //Material _bMaterial;
     //Material _wMaterail;
     
@@ -22,6 +22,7 @@ public class Genground : MonoBehaviour {
     {
         initGround();
         initWall();
+        NavMeshBuilder.BuildNavMesh();
     }
 
     void initGround()
