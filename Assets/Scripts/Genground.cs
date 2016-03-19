@@ -27,8 +27,6 @@ public class Genground : MonoBehaviour {
     void initGround()
     {
         GameObject obj = AssetDatabase.LoadAssetAtPath("Assets/Prefabs/WhiteTile.prefab", typeof(GameObject)) as GameObject;
-        Debug.Log(obj);
-        Debug.Log("vsize = " + vsize + ", hsize = " + hsize);
         for (int i = 0; i < vsize; i++)
         {
             for (int j = 0; j < hsize; j++)
