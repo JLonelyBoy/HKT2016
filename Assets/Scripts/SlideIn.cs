@@ -33,5 +33,6 @@ public class SlideIn : MonoBehaviour {
 			yield return 0;
 		}
 		transform.localPosition = startPos + moveDistance;
+		Application.LoadLevelAdditive ("CatScene");
 	}
 }
