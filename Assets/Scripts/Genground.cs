@@ -36,7 +36,6 @@ public class Genground : MonoBehaviour {
                 //Instantiate(obj, new Vector3(obj.transform.position.x + j, obj.transform.position.y, obj.transform.position.z + i), Quaternion.identity);
                 if ((i % 2 == 0 && j % 2 == 0) || (i % 2 != 0 && j % 2 != 0))
                 {
-                    Debug.Log(AssetDatabase.LoadAssetAtPath("Assets/Prefabs/WhiteTile.prefab", typeof(GameObject)));
                     GameObject gObj = Instantiate(AssetDatabase.LoadAssetAtPath("Assets/Prefabs/WhiteTile.prefab", typeof(GameObject))  ,
                         new Vector3(obj.transform.position.x + j, obj.transform.position.y, obj.transform.position.z + i),
                         Quaternion.identity) as GameObject;
