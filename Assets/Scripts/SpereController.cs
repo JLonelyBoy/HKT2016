@@ -7,12 +7,11 @@ public class SpereController : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		_slideIn = GameObject.Find ("CatImage").GetComponent<SlideIn> ();
-	
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		if (EventController.EventPlay () == "Sphere") {
+		if (EventController.EventPlay () == "Sphere" || EventController.EventPlay() == "NPC") {
 			_slideIn.PictureSlideIn ();
 		};
 	}
