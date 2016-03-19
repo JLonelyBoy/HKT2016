@@ -45,9 +45,9 @@ public class PlayerMovement : MonoBehaviour {
 
         float h = Input.GetAxisRaw("Horizontal");
         float v = Input.GetAxisRaw("Vertical");
-        if (h != 0 || v != 0) {
-            Debug.Log("Has Press");
-        }
+        //if (h != 0 || v != 0) {
+        //    Debug.Log("Has Press");
+        //}
 
         movement.Set(h, 0f, v);
         movement = movement.normalized * speed * Time.deltaTime;
@@ -59,9 +59,10 @@ public class PlayerMovement : MonoBehaviour {
         // Tell the animator whether or not the player is walking.
         anim.SetBool("MoveForward", walking);
 
-        Debug.Log(h + " , " + v);
-        Debug.Log(walking);
-        Move();
+        //Debug.Log(h + " , " + v);
+        //Debug.Log(walking);
+        if (EventController.EventPlay() != "NPC")
+            Move();
         //		anim.SetBool ("IsJump", walking);
 
     }
