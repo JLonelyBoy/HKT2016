@@ -15,16 +15,16 @@ public class SpereController : MonoBehaviour {
         _obj = GameObject.Find("still_pizza1");
         _anim = _obj.GetComponent<Animator>();
         par = GameObject.Find("Particle_star").GetComponent<ParticleSystem>();
-        par.enableEmission = false;
+        //par.enableEmission = false;
         par.playOnAwake = true;
         Par = GameObject.Find("Particle_star");
-        Par.SetActive(false);
+        //Par.SetActive(false);
         Debug.Log(par);
 	}
 	
 	// Update is called once per frame
 	void Update () {
-        if (EventController.EventPlay() == "Sphere" || EventController.EventPlay() == "NPC" && _isCutin == false)
+        if (EventController.EventPlay() == "Sphere" || EventController.EventPlay() == "PizzaCar" && _isCutin == false)
         {
             Par.SetActive(true);
             par.enableEmission = true;
