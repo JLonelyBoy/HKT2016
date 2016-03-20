@@ -7,6 +7,7 @@ public class SpereController : MonoBehaviour {
     Animator _anim;
     bool _isCutin = false;
     ParticleSystem par;
+    GameObject Par;
 
 	// Use this for initialization
 	void Start () {
@@ -14,7 +15,10 @@ public class SpereController : MonoBehaviour {
         _obj = GameObject.Find("still_pizza1");
         _anim = _obj.GetComponent<Animator>();
         par = GameObject.Find("Particle_star").GetComponent<ParticleSystem>();
-        //par.enableEmission = false;
+        par.enableEmission = false;
+        par.playOnAwake = true;
+        Par = GameObject.Find("Particle_star");
+        Par.SetActive(false);
         Debug.Log(par);
 	}
 	
@@ -22,10 +26,9 @@ public class SpereController : MonoBehaviour {
 	void Update () {
         if (EventController.EventPlay() == "Sphere" || EventController.EventPlay() == "NPC" && _isCutin == false)
         {
-            //_slideIn.PictureSlideIn ();
-            //bool _isPlaying = !_anim.GetCurrentAnimatorStateInfo(0).IsName("Trigger_tap1");
-            //Debug.Log(_isPlaying);
+            Par.SetActive(true);
             par.enableEmission = true;
+            Debug.Log(par.enableEmission);
             if (par.isPlaying)
             {
                 par.Stop();
@@ -33,7 +36,7 @@ public class SpereController : MonoBehaviour {
             }
             else par.Play();
             par.enableEmission = false;
-
+            Par.SetActive(false);
             _anim.SetBool("Trigger_tap1", true);
             //_anim.SetTrigger("Trigger_tap1");
             _isCutin = true;
